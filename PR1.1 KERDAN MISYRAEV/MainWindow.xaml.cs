@@ -1,17 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace PR1._1_KERDAN_MISYRAEV
 {
@@ -20,6 +8,33 @@ namespace PR1._1_KERDAN_MISYRAEV
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void btnCalculate_Click(object sender, RoutedEventArgs e)
+        {
+            // Получение введённых значений
+            double x = double.Parse(txtX.Text);
+            int m = int.Parse(txtM.Text);
+
+            string result = "";
+
+            if (rbOption1.IsChecked == true)
+            {
+                // Логика для первого варианта
+                result = $"Результат для Варианта 1: {x * m}";
+            }
+            else if (rbOption2.IsChecked == true)
+            {
+                // Логика для второго варианта
+                result = $"Результат для Варианта 2: {(x + m)}";
+            }
+            else if (rbOption3.IsChecked == true)
+            {
+                // Логика для третьего варианта
+                result = $"Результат для Варианта 3: {Math.Pow(x, m)}";
+            }
+
+            lblResult.Text = result;
         }
     }
 }
