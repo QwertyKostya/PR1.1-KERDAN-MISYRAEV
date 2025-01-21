@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace PR1._1_KERDAN_MISYRAEV
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
