@@ -1,32 +1,33 @@
 ﻿<Window x:Class="PR1._1_KERDAN_MISYRAEV.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Практическая работа 1" Height="450" Width="800">
     <Grid>
-        <!-- Поле для ввода значения X -->
-        <TextBox Name="txtX" HorizontalAlignment="Left" Height="23" Margin="259,231,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="x:" HorizontalAlignment="Left" Margin="259,0,0,0" VerticalAlignment="Center"/>
+        <!-- Верхняя часть с изображением -->
+        <Image Name="FunctionImage" Source="C:\Users\konst\Desktop\Screenshot_20250121_092704.png" HorizontalAlignment="Center" VerticalAlignment="Top" Height="113" Width="336"/>
 
-        <!-- Поле для ввода значения m -->
-        <TextBox Name="txtM" HorizontalAlignment="Left" Height="23" Margin="393,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="m:" HorizontalAlignment="Left" Margin="393,200,0,0" VerticalAlignment="Top" Height="30"/>
+        <!-- Левая часть с элементами ввода -->
+        <StackPanel Grid.Column="0" Margin="10,84,30,-45">
+            <Label Content="X:" ToolTip="Введите значение X"/>
+            <TextBox Name="InputX" Margin="0,0,0,10" ToolTip="Введите значение X"/>
 
-        <!-- Группа радиокнопок -->
-        <GroupBox Header="Выбор варианта" HorizontalAlignment="Left" Margin="262,270,0,0" VerticalAlignment="Top" Height="90" Width="240">
-            <StackPanel Orientation="Vertical">
-                <RadioButton Name="rbOption1" Content="Вариант 1" IsChecked="True"/>
-                <RadioButton Name="rbOption2" Content="Вариант 2"/>
-                <RadioButton Name="rbOption3" Content="Вариант 3"/>
-            </StackPanel>
-        </GroupBox>
+            <Label Content="Y:" ToolTip="Введите значение Y"/>
+            <TextBox Name="InputY" Margin="0,0,0,10" ToolTip="Введите значение Y"/>
 
-        <!-- Кнопка для расчета -->
-        <Button Name="btnCalculate" Content="Рассчитать" HorizontalAlignment="Left" Margin="402,377,0,0" VerticalAlignment="Top" Click="btnCalculate_Click"/>
+            <Separator Margin="0,10"/>
 
-        <!-- Поле для вывода результата -->
-        <TextBlock Name="lblResult" HorizontalAlignment="Left" Margin="62,371,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" TextAlignment="Center" Width="299"/>
+            <RadioButton Name="Shx" Content="sh(x)" IsChecked="True" ToolTip="Гиперболический синус"/>
+            <RadioButton Name="X2" Content="x²" ToolTip="Квадрат числа"/>
+            <RadioButton Name="Ex" Content="eˣ" ToolTip="Экспонента"/>
 
-        <!-- Изображение -->
-        <Image Source="C:\Users\konst\Desktop\Screenshot_20250121_092704.png" Margin="148,-1,148,236"/>
+            <Button Name="CalculateButton" Content="Вычислить" Click="CalculateButton_Click" Margin="0,10" ToolTip="Нажмите для вычисления результата"/>
+            <Button Name="ClearButton" Content="Очистить" Click="ClearButton_Click" Margin="0,10" ToolTip="Очистить поля ввода"/>
+        </StackPanel>
+
+        <!-- Правая часть с результатом -->
+        <StackPanel Margin="10,328,30,-289">
+            <Label Content="Результат:"/>
+            <TextBox x:Name="ResultTextBox" IsReadOnly="True" Margin="0,0,0,10" ToolTip="Отображается результат вычисления"/>
+        </StackPanel>
     </Grid>
 </Window>
